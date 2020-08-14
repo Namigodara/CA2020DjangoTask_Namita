@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <h2>{{article.title}}</h2>
+        <p>{{article.content}}</p>
+
+        <a href = "{% url 'index'%}">
+            Back to Articles
+        </a>
+{% endblock %}

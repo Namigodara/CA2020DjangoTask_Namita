@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <h2>Create your blog here</h2>
+        <form method = "POST" action="">
+            {% csrf_token %} <!-- implementing csrf token for security -->
+            {{form.as_p}}  <!-- passing form into html -->
+            <input type = "submit", value = "Submit"/>
+        </form>
+        <a href = "{% url 'index' %}">
+            Back to articles
+        </a>
+{% endblock %}
