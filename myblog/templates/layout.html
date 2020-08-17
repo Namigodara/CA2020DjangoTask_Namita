@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Articles</title>
+    <style>
+            div {
+                background-color:white ;
+                width: 400px;
+                height: 100px;
+                padding: 20px;
+                margin: 20px;
+            }
+            h1 {
+                color: red;
+                text_align: center;
+            }
+     </style>
+
+    <title>Welcome to My Awesome Blog!</title>
+
 </head>
 <body>
+   <p>
+        <a href = "{% url 'home' %}">Home</a>/
+        {% if user.is_authenticated %}
+            <a href = "{% url 'logout' %}"> LogOut</a>
+        {% else %}
+            <a href = "{% url 'signup' %}"> SignUp</a>/
+            <a href = "{% url 'login' %}"> Login</a>
+        {% endif %}
+   </p>
+    <p>
+        {% if user.is_authenticated %}
+           <h1> Welcome {{user.username}} ! </h1>
+        {% else %}
+            <h1>   Welcome to our Awesome Blog! </h1>
+        {% endif %}
+    </p>
+
     {% block body %}
     {% endblock %}
 </body>

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>
+    <a href = "{% url 'index' %}"> Read Blog</a>
+    <a href = "{% url 'create' %}"> Create Blog</a>
+</p>
+
+<div>
+    <h2> About Us</h2>
+    <p>
+        we are a small blog site! You can register to and create
+        your blogs here!
+        Thank You!
+    </p>
+</div>
+
+
+
+
+{% endblock %}

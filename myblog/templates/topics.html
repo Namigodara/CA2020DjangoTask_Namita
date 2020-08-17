@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <h2> List of Articles!</h2>
+    {% for article in articles %}
+        <div>
+            <h2>
+                <a href = "{% url 'detail' article.id %}">
+                    {{article.title}}
+                </a>
+            </h2>
+            <p>{{article.content|truncatechars:60}}</p>
+        </div>
+    {% endfor %}
+
+<h2>
+    <a href = "{% url 'create' %}" >
+        Create new article
+    </a>
+</h2>
+{% endblock %}

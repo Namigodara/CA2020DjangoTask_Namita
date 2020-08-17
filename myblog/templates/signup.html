@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block body %}
+        <h2>Sign Up</h2>
+        <form method = "POST" >
+            {% csrf_token %} <!-- implementing csrf token for security -->
+            {{form.as_p}}  <!-- passing form into html -->
+            <button type = "submit">Sign Up</button>
+        </form>
+{% endblock %}
